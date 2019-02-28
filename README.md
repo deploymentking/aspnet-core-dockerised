@@ -7,16 +7,20 @@ test a .NET application in Kubernetes
 
 ### Build the Docker image
 ```
-# Build image with latest tag
+# Build the image with latest tag
 make build
 
-# Add tag to Docker image
+# Build the image with specified tag
 make build tag=test
 ```
 
 ### Push the Docker image
 ```
+# Push the image with latest tag
 make push
+
+# Push the image with specified tag
+make push tag=test
 ```
 
 ### Apply the Kubernetes manifest
