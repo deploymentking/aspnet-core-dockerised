@@ -14,7 +14,7 @@ namespace DotNetCoreOnK8s.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] {"Hello", "World"};
+            return new string[] {"Hello", "World", DateTime.Now.ToLongTimeString()};
         }
 
         // GET api/values/5
