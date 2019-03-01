@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/name: dot-net-core-k8s
     app.kubernetes.io/instance: dot-net-core-k8s
     app.kubernetes.io/managed-by: 'Lee.Myring'
-    aadpodidbinding: select_it
+    aadpodidbinding: dot-net-core-k8s-identity-selector
 spec:
   replicas: 1
   selector:
@@ -20,7 +20,7 @@ spec:
         app.kubernetes.io/name: dot-net-core-k8s
         app.kubernetes.io/instance: dot-net-core-k8s
         app.kubernetes.io/managed-by: 'Lee.Myring'
-        aadpodidbinding: select_it
+        aadpodidbinding: dot-net-core-k8s-identity-selector
     spec:
       containers:
         - name: dot-net-core-k8s
