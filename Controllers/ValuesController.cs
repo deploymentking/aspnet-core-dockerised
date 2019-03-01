@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace DotNetCoreOnK8s.Controllers
 {
@@ -10,11 +9,22 @@ namespace DotNetCoreOnK8s.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private IConfiguration _configuration;
+
+        public ValuesController(IConfiguration Configuration)
+        {
+            _configuration = Configuration;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] {"Hello", "World", DateTime.Now.ToLongTimeString()};
+            return new[]
+            {
+                "Hello", "World", DateTime.Now.ToLongTimeString(), _configuration["SecretName"],
+                _configuration["Section:SecretName"]
+            };
         }
 
         // GET api/values/5
