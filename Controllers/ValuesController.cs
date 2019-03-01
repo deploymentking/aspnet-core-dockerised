@@ -22,8 +22,7 @@ namespace DotNetCoreOnK8s.Controllers
         {
             return new[]
             {
-                "Hello", "World", DateTime.Now.ToLongTimeString(), _configuration["SecretName"],
-                _configuration["Section:SecretName"]
+                "Hello", "World", DateTime.Now.ToLongTimeString(), _configuration["LeeTest"]
             };
         }
 
