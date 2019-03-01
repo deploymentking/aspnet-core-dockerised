@@ -23,7 +23,12 @@ make push
 make push tag=test
 ```
 
-### Apply the Kubernetes manifest
+### Apply the Kubernetes manifest (deployment, service and ingress)
 ```
 make apply
+```
+
+### Delete the Kubernetes manifest (deployment, service and ingress)
+```
+make delete
 ```
