@@ -29,7 +29,7 @@ namespace DotNetCoreOnK8s
                                 azureServiceTokenProvider.KeyVaultTokenCallback));
 
                         config.AddAzureKeyVault(
-                            $"https://{builtConfig["KeyVault:BaseUrl"]}.vault.azure.net/",
+                            $"https://{builtConfig["KeyVault:Name"]}.vault.azure.net/",
                             keyVaultClient,
                             new DefaultKeyVaultSecretManager());
                     }
